@@ -62,3 +62,9 @@ section{
 .mail{
     text-decoration: underline;
 }
+#img{
+    border-radius: 300px;
+    border-style: groove;
+    border-image: stretch;
+    border-color: rgb(147, 147, 221);
+}
