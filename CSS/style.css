@@ -56,3 +56,9 @@ section{
     text-transform: capitalize;
     text-decoration: overline;
 }
+.tel{
+    text-decoration: underline;
+}
+.mail{
+    text-decoration: underline;
+}
