@@ -1,76 +1,242 @@
 <!DOCTYPE html>
-<html lang="fr">
+<HTML lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>PORTFOLIO</title>
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
-    <header>
-        <h1 class="titre">NWOS LIKENG SOUOP ERIC-ALEXANDRE PAVEL</h1>
-        <h2 class="sous-titre">Menu de Navigation</h2>
-        <nav>
-            <ul class="nav-link">
-                <li><a href="#Accueil">Accueil</a></li>
-                <li><a href="#A propos">A propos</a></li>
-                <li><a href="#Competence">Competence</a></li>
-                <li><a href="#Parcour">Parcour</a></li>
-                <li><a href="#Contact">Contacts</a></li>
-                <li><a href="#Email">Adresse Email</a></li>
-            </ul>
-        </nav>
-        <h2 class="sous-titre" id="Accueil">Accueil</h2>
-        <p>Je suis NWOS LIKENG SOUOP ERIC-ALEXANDRE PAVEL, étudiant en informatique fondamental Niveau 1 à l'université
-            de yaoundé 1</p>
-    </header>
-    <h2 class="sous-titre" id="A propos">A propos</h2>
-    <p>je me nomme, ERIC-ALEXANDRE, je suis dévéloppeur web passioné par les creation interactifs et moderne
-        <br>je crée des sites web responsive,des application interactifs, mon objectif est de transformer
-        des idée complexes en expérience visuelles simple et efficace
-        <br>découvrez mes projets ci dessous.
-    <div ><img id="img" src="20251002_184005.jpg" width="300" height="400"></div>
-    <section>
-        <h2 class="sous-titre" id="Competence">Competénces</h2>
-        <ul class="list">
-            <li>Création de Formulaire</li>
-            <li>Création de Portfolio</li>
-            <li>Débutant en Dévéloppement web</li>
-            <li>base en HtmL</li>
-            <li>Expert en burautique</li>
-        </ul>
-    </section>
-    <h2 class="sous-titre" id="Parcour">Parcour</h2>
-    <table border="1" class="table">
-        <thead class="table-head">
-            <tr>
-                <th>Année</th>
-                <th>Formation</th>
-            </tr>
-        </thead>
-        <tbody class="table-body">
-            <tr>
-                <td>2025</td>
-                <td>Maintenance informatique</td>
-            </tr>
-            <tr>
-                <td>2026</td>
-                <td>Dévéloppement web</td>
-            </tr>
-        </tbody>
 
-    </table>
-    <h2 class="sous-titre" id="Contact">Contacts</h2>
-    <P class="tel">TEL: 682699374/687477513</P>
-    <h2 class="sous-titre" id="Email">Adresse Email</h2>
-    <p class="mail">Email: likengalex1@gmail.com</p>
-    <footer class="foot">
-        <p>2026 - Portfolio de NWOS LIKENG SOUOP ERIC-ALEXANDRE PAVEL
-            <br>Ceci est le resumé de mon Parcour professionnel
-        </p>
+    <header>
+
+
+        <nav class="navbar">
+            <p class="indice"><b>NLSE.<u>DEV</u></b></p>
+
+            <ul class="zone" id="zone">
+                <li>
+                    <a href="#apropos">À Propos</a>
+                    <a href="#Competences">Competences</a>
+                    <a href="#Parcours">Parcours</a>
+                    <a href="#contact">contact</a>
+                </li>
+            </ul>
+            <div class="burger-menu" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+
+    </header>
+    <!-- FIRST PAGE -->
+    <header class="page1">
+        <div class="text">
+            <div class="text-hero">
+                <p class="subtitle">DEVELOPPEUR WEB. ETUDIANT EN INFORMATIQUE</p>
+                <h1>
+                    NWOS LIKENG SOUOP <br>
+                    <em>ERIC-ALEX</em>
+                </h1>
+                <p class="description">Passionné par la creation d'experiences web modernes et accessibles.En route
+                    vers le developpement front-end.</p><br>
+                <button type="button">
+                    <a href="https://wa.me/237682699374">ME CONTACTER</a>
+                </button>
+            </div><br>
+
+            <div class="image">
+                <div class="circle">
+                    <img src="20251014_151459.jpg" alt=" ma photo de profil" width="150">
+                </div>
+            </div>
+        </div>
+    </header><br>
+
+    <!--A propos  -->
+    <section id="apropos">
+        <div class="part1">
+            <p class="subtitle">A PROPOS</p>
+
+            <h2><b>Qui suis-je?</b></h2>
+
+            <p>je suis étudiant en première année d'informatique,
+                animé par une vraie curiosité pour le web et ses technologies.
+                Je m'interesse particulièrement à la conception d"interfaces élégantes,
+                à l'expérience utilisateur,et aux bonnes pratiques du developpement front-end.</p>
+
+            <p>Mon objectif: devenir developpeur front-end capable
+                de transformer des idées en expériences digitales mémorables</p>
+        </div>
+        <div class="part2">
+            <div id="c1">
+                <h2>1 <sup>ère</sup></h2>
+                <p>ANNEE D'INFORMATIQUE</p>
+            </div>
+            <div id="c1">
+                <h2>3+</h2>
+                <p>TECHNOLOGIES MAITRISEES</p>
+            </div>
+            <div id="c1">
+                <h2>∞</h2>
+                <p>ENVIE D'APPRENDRE</p>
+            </div><br>
+        </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="Competences">
+        <div class="fond">
+            <p class="subtitle">COMPETENCES</p>
+            <h2 class="theme"><b>Ce que je sais faire</b></h2>
+        </div>
+        <div class="container">
+            <div class="cards">
+
+                <article class="card">
+                    <h3>HTML</h3>
+                    <p>Structure sémantique,accesibilité,bonnes pratiques.</p>
+                </article>
+                <article class="card">
+                    <h3>Git</h3>
+                    <p>Versioning,branches,gestion de l'historique.</p>
+                </article>
+
+                <article class="card">
+                    <h3>GitHub</h3>
+                    <p>Collaboration,pull requests,hebergement de projets.</p>
+                </article>
+                <article class="card">
+                    <h3>Travail en équipe</h3>
+                    <p> Communication,organisation,methodes agiles.</p>
+                </article>
+                <article class="card">
+                    <h3>Resolution de problemes</h3>
+                    <p>Analyse ,decomposition,logique,algorithmique.</p>
+                </article>
+
+            </div><br>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARCOURS -->
+    <section id="Parcours">
+        <p class="subtitle">PARCOURS</p>
+        <h2 class="theme"><b>Mon chemin</b></h2>
+        <div class="timeline">
+            <!-- ELEMENT 1 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <span class="badge">DIPLOME</span>
+                    <h3>GCE O/L SCIENCE</h3>
+                    <P>
+                        Obtention du GCE O/L avec spécialité scientifique, premier pas vers les science informatique
+                    </P>
+                </div>
+            </div>
+            <!-- ELEMENT 2 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <span class="badge">DIPLOME</span>
+                    <h3>GCE A/L SCIENCE</h3>
+                    <p>
+                        Obtention du GCE A/L avec spécialité scientifique, grand saut vers le vaste monde de
+                        l'informatique et du digital moderne.
+                    </p>
+                </div>
+            </div>
+            <!-- ELEMENT 3 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <span class="badge">FORMATION</span>
+                    <h3>Maintenance Informatique</h3>
+                    <p>
+                        Maintenance materielle,maintenance logicielle et mise en reseau des ordinateurs
+                    </p>
+                </div>
+
+            </div>
+            <!-- ELEMENT 4 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-content">
+                    <span class="badge">FORMATION</span>
+                    <h3>L1 Informatique</h3>
+                    <p>
+                        Première année de licence informatique,initialisation à l'algorithme et aux systèmes.
+                    </p>
+                </div>
+            </div>
+            <!-- ELEMENT 5 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-content">
+                    <span class="badge">EN COURS</span>
+                    <h3>Formation en développement web</h3>
+                    <p>
+                        Apprentissage du HTML,CSS,et des bases du developpement front-end moderne.
+                    </p>
+                </div>
+            </div>
+            <br>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+        <diV class="contact-container">
+
+            <div class="contact-left">
+
+                <p class="subtitle">CONTACT</p>
+                <h2 class="theme"><b>Travaillons <br><em>ensemble</em></b></h2>
+                <p>Une question ,une idée de projet,ou simplement envie d'échanger? N'hésiter pas à m'écrire.</p>
+            </div>
+
+            <!-- FORMULAIRE -->
+            <form action="" method="post">
+                <div class="contact-right">
+                    <label for="">NOM COMPLET</label><br>
+                    <input type="text" name="nom" placehoder="ton nom complet" required><br>
+                    <label for="votre@ adresse">ADRESSE EMAIL</label><br>
+                    <input type="email" required><br>
+                    <label for="">MESSAGE</label><br>
+                    <textarea name="" id="" cols="30" rows="10"></textarea><br>
+                    <button type="submit">Envoyer le message <a href="https://237682699374"></a></button><br>
+                </div>
+            </form>
+        </div>
+
+
+    </section>
+    <footer>
+        ©2026.NWOS LIKENG SOUOP ERIC-ALEX.Tous droits reservés.
     </footer>
+
+
+    <script>
+        // On récupère le bouton et la liste de liens grâce à leurs ID
+        const menuHamburger = document.querySelector("#burger-menu");
+        const zone = document.querySelector("#zone");
+
+        // On écoute le clic sur le bouton
+        menuHamburger.addEventListener('click', () => {
+            // "toggle" ajoute la classe si elle n'est pas là, et l'enlève si elle y est
+            zone.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
