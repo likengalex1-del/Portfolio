@@ -1,78 +1,109 @@
-//---GESTION DU THEME DYNAMIQUE---
-const themeToggle = document.querySelector('#theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+document.addEventListener("DOMContentLoaded", () => {
+    
+    /* =========================================================
+       1. CREATION ET PLACEMENT DU BOUTON DE THEME
+       ========================================================= */
+    const themeBtn = document.createElement("button");
+    themeBtn.id = "theme-toggle";
+    themeBtn.innerHTML = "🌙";
+    themeBtn.classList.add("theme-btn");
 
-// Fonction pour appliquer le thème
-const applyTheme = (theme) => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('portfolio-theme', theme);
+    const burgerMenu = document.getElementById("burger-menu");
+    const navbar = document.querySelector(".navbar");
 
-    if (theme === 'light') {
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
+    // On insère le bouton juste avant le menu burger comme demandé
+    if (navbar && burgerMenu) {
+        navbar.insertBefore(themeBtn, burgerMenu);
     }
-};
 
-// Vérifier la préférence sauvegardée
-const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-applyTheme(savedTheme);
+    const body = document.body;
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme);
-});
-
-//--- MENU MOBILE ---
-const menuToggle = document.querySelector('#mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    // Animation simple du hamburger
-    const bars = document.querySelectorAll('.bar');
-    bars[0].classList.toggle('rotate-down'); // Optionnel: ajouter des classes CSS pour l'animation en X
-});
-
-// Fermer le menu au clic sur un lien 
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
-});
-
-//--- ANIMATION AU DEFILEMENT (OBSERVER) ---
-const observerOptions = { threshold: 0.15 };
-const revealObsever = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+    const applyTheme = (theme) => {
+        if (theme === "dark") {
+            body.classList.add("dark-mode");
+            themeBtn.innerHTML = "☀️";
+        } else {
+            body.classList.remove("dark-mode");
+            themeBtn.innerHTML = "🌙";
         }
+    };
+
+    const savedTheme = localStorage.getItem("portfolio-theme") || "light";
+    applyTheme(savedTheme);
+
+    themeBtn.addEventListener("click", () => {
+        const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        applyTheme(newTheme);
+        localStorage.setItem("portfolio-theme", newTheme);
     });
-}, observerOptions);
 
-document.querySelectorAll('.section-container').forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(30px)";
-    section.style.transition = "all 0.8s ease-out";
-    revealObsever.observe(section);
-});
 
-//style injecté par JS pour l'animation au scroll
-const style = document.createElement('style');
-style.innerHTML = `
-    .visible {
-         opacity: 1 !important;
-         transform: translateY(0) !important;
+    /* =========================================================
+       2. GESTION DU MENU BURGER (Navigation Mobile)
+       ========================================================= */
+    const navMenu = document.getElementById("zone");
+    const navLinks = document.querySelectorAll(".zone li a");
+
+    if (burgerMenu && navMenu) {
+        burgerMenu.addEventListener("click", () => {
+            burgerMenu.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Fermeture automatique quand on clique sur un lien
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                burgerMenu.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
     }
-`;
-document.head.appendChild(style);
 
-// --- GESTION DU FORMULAIRE ---
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    alert('merci ${name}, votre message a bien été envoyé (Démonstration) !');
-    this.reset();
+
+    /* =========================================================
+       3. DEFILEMENT FLUIDE (Smooth Scroll)
+       ========================================================= */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70, // Ajusté pour ton header
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+
+    /* =========================================================
+       4. ANIMATIONS D'APPARITION (Intersection Observer)
+       ========================================================= */
+    // On cible tes cartes de compétences et les éléments de ta timeline
+    const animElements = document.querySelectorAll(".card, .timeline-item, .part1, .part2");
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearanceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                // On peut arrêter d'observer une fois l'élément apparu
+                appearanceObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animElements.forEach(el => {
+        el.classList.add("hidden"); // Ajoute la classe de base pour cacher
+        appearanceObserver.observe(el);
+    });
+
 });

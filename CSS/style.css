@@ -3,7 +3,7 @@
 }
 /* PREMIERE PAGE */
 body{
-    background-color:aliceblue ;
+    background-color:rgb(172, 208, 240) ;
     margin: 0;
     font-family: 'playfair display',serif;
     display: flex;
@@ -265,7 +265,7 @@ input, textarea {
     margin: 10px;
 }
 #c1{
-    background-color: darkseagreen;
+    background-color: blue;
     padding: 20px 25px;
     border-radius: 10px;
     box-shadow: 0 5px rgba(0, 0, 0, 0.05);
@@ -281,7 +281,7 @@ input, textarea {
 } 
 /* COMPETENCES */
 .fond{
-    background-color: darkseagreen;
+    background-color: blue;
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
@@ -297,7 +297,7 @@ input, textarea {
     display: flex;
     width: 170px;
     height: 170px;
-    background: darkseagreen;
+    background: blue;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
@@ -350,7 +350,7 @@ input, textarea {
     align-content: center;
 }
 .timeline-content{
-    background:darkseagreen;
+    background:blue;
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -374,7 +374,7 @@ input, textarea {
 }
 .contact-container{
     width: 80%;
-    background: rgb(84, 123, 84);
+    background: #1d53b8;
     color: #000000;
     border-radius: 10px;
     padding: 60px;
@@ -473,5 +473,11 @@ footer{
   #zone.active{
     display: flex;
     flex-direction: column;
+  }
+  #para{
+    color: #e9aeae;
+  }
+  #italics{
+    color: #3a2b55;
   }
 }
