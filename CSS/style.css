@@ -3,7 +3,7 @@
 }
 /* PREMIERE PAGE */
 body{
-    background-color:rgb(172, 208, 240) ;
+    background-color:rgb(163, 187, 207) ;
     margin: 0;
     font-family: 'playfair display',serif;
     display: flex;
@@ -99,6 +99,7 @@ img{
 .description{
     margin: 20px 0px;
     max-width: 400px;
+    color: whitesmoke;
 }
 button{
     border-radius: 8px; 
@@ -277,7 +278,7 @@ input, textarea {
 #c1 p{
     margin: 5px 0 0;
     font-size: 12px;
-    color: #211e1e;
+    color: rgb(255, 255, 255);
 } 
 /* COMPETENCES */
 .fond{
@@ -313,6 +314,7 @@ input, textarea {
 }
 .card p{
     word-break: break-word;
+    color: whitesmoke;
     
 }
 /* MON PARCOUR */
@@ -355,6 +357,9 @@ input, textarea {
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     flex: 1;
+}
+.timeline-content p{
+    color: whitesmoke;
 }
 .badge{
     display: inline-block;
@@ -426,6 +431,9 @@ textarea{
 footer{
     text-align: start;
 }
+.for{
+    color: whitesmoke;
+}
 /* Style du bouton burger */
 .burger-menu {
   display: none; /* Caché sur ordinateur */
@@ -479,5 +487,9 @@ footer{
   }
   #italics{
     color: #3a2b55;
+  }
+  .stew{
+    content: white;
+    
   }
 }
