@@ -247,6 +247,9 @@ input, textarea {
     margin: 20px;
     margin-top: 0;
 }
+.brain{
+    color: whitesmoke;
+}
 #zone1{
     align-items: start;
     display: flex;
